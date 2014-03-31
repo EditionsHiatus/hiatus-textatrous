@@ -277,7 +277,9 @@
 
             <!-- Left side column. contains the logo and sidebar -->
             <aside class="left-side sidebar-offcanvas">   
-                {% block sidebar %}{% endblock %}
+                {% block sidebar %}
+                    {% include 'sidebar.twig' }
+                {% endblock %}
             </aside>
 
             <!-- Right side column. Contains the navbar and content of the page -->

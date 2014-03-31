@@ -1,16 +1,15 @@
 {% extends "base.twig" %}
 
-{% block title %}Index{% endblock %}
-{% block head %}
-    {{ parent() }}
-    <style type="text/css">
-        .important { color: #336699; }
-    </style>
-{% endblock %}
+{% block title %}{{sheet.title}}{% endblock %}
 {% block content %}
-    <h1>Index</h1>
-
-    <p>
-      {{sheet.body}}
-    </p>
+    <div class="row">
+        <div class="box box-solid">
+            <div class="box-header">
+                <h3 class="box-title">{{sheet.title}}</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body text-center">
+              {{sheet.body|raw}}
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div><!-- /.row -->
 {% endblock %}
