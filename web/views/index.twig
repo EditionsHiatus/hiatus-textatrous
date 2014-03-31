@@ -1,0 +1,5 @@
+<ul>
+  {% for item in sheets %}
+    <li><a href="/{{ item.slug }}">{{ item.title }}</a></li>
+  {% endfor %}
+</ul>
