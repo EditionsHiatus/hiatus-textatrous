@@ -305,8 +305,29 @@
 
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
-                {% block content %}{% endblock %}
+
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Blank page
+                        <small>Control panel</small>
+                        {% block contentheader %}{% endblock %}
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">Blank page</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+                    {% block content %}{% endblock %}
+
+                </section><!-- /.content -->
+
             </aside><!-- /.right-side -->
+
         </div><!-- ./wrapper -->
 
 
