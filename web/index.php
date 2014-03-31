@@ -62,6 +62,7 @@ $app->get('/s/{sheetId}', function ($sheetId) use ($app, $sheets) {
     $sheet['body'] = makeHtml($sheet);
 
     return $app['twig']->render('sheet.twig', array(
+        'sheets' => $sheets,
         'sheet' => $sheet
     ));
 });
