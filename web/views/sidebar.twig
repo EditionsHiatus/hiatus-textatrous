@@ -19,7 +19,7 @@
             </a>
             <ul class="treeview-menu">
                 {% for item in sheets %}
-                    <li>
+                    <li class="{{ sheet && sheet.slug == item.title ? 'active' : '' }}">
                         <a href="/s/{{item.slug}}">
                             <i class="fa fa-angle-double-right"></i> <span>{{item.title}}</span>
                             <small class="badge pull-right bg-red">3</small>
