@@ -20,9 +20,13 @@ function makeHtml($sheet) {
 
     $element = 'select';
 
+    $values = implode('##', array_map(function($collection){
+        return implode('|', $collection);
+    }, $sheet['values']));
+
     return preg_replace(
-        '/[\.]{4}/g',
-        '<'.$element.' class="hiatus-textatrous-placeholder" data-values="' . str_replace('"', '\"', implode('||', $sheet['values'])) . '"></'.$element.'>',
+        '/[\.]{4,1000}/',
+        '<'.$element.' class="hiatus-textatrous-placeholder" data-values="' . str_replace('"', '\"', $values) . '"></'.$element.'>',
         $sheet['body']
     );
 }
@@ -32,7 +36,7 @@ function makeHtml($sheet) {
 $app['debug'] = true;
 
 $sheets = array(
-    0 => array(
+    'test' => array(
         'date'      => '2011-03-29',
         'title'     => 'Using Silex',
         'slug'      => 'test',

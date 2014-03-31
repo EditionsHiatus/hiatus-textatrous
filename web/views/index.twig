@@ -1,5 +1,19 @@
-<ul>
-  {% for item in sheets %}
-    <li><a href="/{{ item.slug }}">{{ item.title }}</a></li>
-  {% endfor %}
-</ul>
+% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h1>Index</h1>
+
+    <ul>
+      {% for item in sheets %}
+        <li><a href="/{{ item.slug }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+
+{% endblock %}
