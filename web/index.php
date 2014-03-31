@@ -26,7 +26,7 @@ function makeHtml($sheet) {
 
     return preg_replace(
         '/[\.]{4,1000}/',
-        '<'.$element.' class="hiatus-textatrous-placeholder" data-values="' . str_replace('"', '\"', $values) . '"></'.$element.'>',
+        '<'.$element.' class="hiatus-textatrous-placeholder" data-values="' . str_replace('"', '\"', $values) . '">' . '....' . '</'.$element.'>',
         $sheet['body']
     );
 }
