@@ -52,7 +52,7 @@ $app->get('/', function () use ($app, $sheets) {
     ));
 });
 
-$app->get('/s/{sheet}', function ($sheetId) use ($app, $sheets) {
+$app->get('/s/{sheetId}', function ($sheetId) use ($app, $sheets) {
 
     $sheet = $sheets[$sheetId];
     $sheet['body'] = makeHtml($sheet);
