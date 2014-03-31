@@ -1,3 +1,16 @@
-<p>
-  {{sheet.body}}
-</p>
+% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h1>Index</h1>
+
+    <p>
+      {{sheet.body}}
+    </p>
+{% endblock %}
