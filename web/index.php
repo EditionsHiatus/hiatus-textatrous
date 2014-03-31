@@ -18,7 +18,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
  */
 function makeHtml($sheet) {
 
-    $element = 'select';
+    $element = 'span';
 
     $values = implode('##', array_map(function($collection){
         return implode('|', $collection);

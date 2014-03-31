@@ -12,8 +12,17 @@ $(function() {
         html: true,
         placement: 'top',
         trigger: 'hover',
-        content: function(){
-            return $(this).data('values');
+        content: function() {
+            var $this = $(this);
+            var text = $this.data('text');
+
+            if (! text) {
+                var values = $this.data('values');
+                text = '<a href="#">' + values + '</a>';
+                $this.data('text', text);
+            }
+
+            return text;
         }
     });
 
