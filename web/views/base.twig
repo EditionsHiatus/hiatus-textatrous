@@ -1,29 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {% block head %}
-            <link rel="stylesheet" href="style.css" />
-            <title>{% block title %}{% endblock %} - My Webpage</title>
-        {% endblock %}
-    </head>
-    <body>
-        <div id="content">{% block content %}{% endblock %}</div>
-        <div id="footer">
-            {% block footer %}
-                &copy; Copyright 2011 by <a href="http://domain.invalid/">you</a>.
-            {% endblock %}
-        </div>
-    </body>
-</html>
-
-
-
-
-
-
-<!DOCTYPE html>
-<html>
-    <head>
         <meta charset="UTF-8">
         <title>AdminLTE | Dashboard</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
@@ -300,7 +277,7 @@
 
             <!-- Left side column. contains the logo and sidebar -->
             <aside class="left-side sidebar-offcanvas">   
-                {{{% block sidebar %}{% endblock %}}}
+                {% block sidebar %}{% endblock %}
             </aside>
 
             <!-- Right side column. Contains the navbar and content of the page -->
