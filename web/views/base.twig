@@ -278,7 +278,7 @@
             <!-- Left side column. contains the logo and sidebar -->
             <aside class="left-side sidebar-offcanvas">   
                 {% block sidebar %}
-                    {% include 'sidebar.twig' %}
+                    {% include 'sidebar.twig' with {'sheets': sheets,'sheet': sheet} %}
                 {% endblock %}
             </aside>
 
@@ -287,11 +287,6 @@
 
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>
-                        Blank page
-                        <small>Control panel</small>
-                        {% block contentheader %}{% endblock %}
-                    </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                         <li class="active">Blank page</li>
@@ -299,7 +294,7 @@
                 </section>
 
                 <!-- Main content -->
-                <section class="content">
+                <section class="content" id="sheet-cntainer">
 
                     {% block content %}{% endblock %}
 
@@ -310,10 +305,28 @@
         </div><!-- ./wrapper -->
 
 
+        <script type="template/undescore" id="sheet-template">
+            <h1><%= title %></h1>
+            <blockquote class="row">
+                <p><%= body.replace(/\$(\d+)/g, function(match, phIndex, offset, s) {
+                        return '<a href="#" data-index="' + phIndex + '" class="hiatus-placeholder">'
+                            + values[currentVersion][phIndex] + '</a>';
+                    })
+                    .replace(/\n/g, '<br>')
+                %></p>
+            </blockquote>
+        </script>
+
         <!-- jQuery -->
         <script src="../js/jquery-1.11.0.min.js"></script>
         <!-- Bootstrap -->
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- Underscore -->
+        <script src="../js/backbone/underscore-min.js" type="text/javascript"></script>
+        <!-- Backbone -->
+        <script src="../js/backbone/backbone.js" type="text/javascript"></script>
+        <!-- Theme -->
+        <script src="../js/theme.js" type="text/javascript"></script>
         <!-- App -->
         <script src="../js/app.js" type="text/javascript"></script>
 

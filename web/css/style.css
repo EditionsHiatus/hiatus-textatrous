@@ -1,0 +1,17 @@
+
+.hiatus-placeholder {
+  font-weight: bold;
+  color: #333;
+}
+
+.popover-content .select-word,
+.popover-content input {
+  float: left;
+  overflow: hidden;
+  -border-right: 2px solid #333;
+  padding: 0 5px;
+}
+.popover-content input {
+  border: none;
+  width: 80px;
+}
